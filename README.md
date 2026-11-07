@@ -1,6 +1,6 @@
-                                                                      ParkPulse - AI Driven Parking Monitoring And Booking System
+                                                                     - ParkPulse - AI Driven Parking Monitoring And Booking System -
 
-                                                                                      Project Description 
+                                                                                      Project Description
 
    An AI and IoT-based application developed to detect available and occupied parking slots in real time, display parking availability through a dashboard, and guide drivers to vacant parking spaces.
 
