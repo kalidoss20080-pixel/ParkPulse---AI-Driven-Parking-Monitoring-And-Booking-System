@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="eyebrow">CONTROL CENTRE</p>
+<h1>Operator dashboard</h1>
+<p class="muted">For this prototype, the operator updates a slot after checking the parking area.</p>
+<div class="slot-grid">
+{% for slot in slots %}
+  <article class="slot-card {{ slot.status|lower }}">
+    <div class="slot-head"><h3>{{ slot.slot_id }}</h3><span class="status">{{ slot.status }}</span></div>
+    <p class="muted">Distance priority: {{ slot.distance_order }}</p>
+    <form action="{{ url_for('update_slot') }}" method="post" class="actions">
+      <input type="hidden" name="slot_id" value="{{ slot.slot_id }}">
+      <button name="status" value="Available" class="secondary">Set available</button>
+      <button name="status" value="Occupied">Set occupied</button>
+    </form>
+  </article>
+{% endfor %}
+</div>
+<section class="panel">
+  <h2>Integration status</h2>
+  <p>Web dashboard and SQLite database: included.</p>
+  <p>Automatic camera detection and ESP32 LED control: hardware/model integration stage.</p>
+  <p>ANPR: future extension, not included in this prototype.</p>
+</section>
+{% endblock %}
